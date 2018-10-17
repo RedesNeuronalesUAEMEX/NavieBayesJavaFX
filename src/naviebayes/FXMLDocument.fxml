@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="naviebayes.FXMLDocumentController">
+    <children>
+      <HBox prefHeight="34.0" prefWidth="769.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #FF5722;" text="Path File:" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Jamrul" size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pathFileView" prefHeight="34.0" prefWidth="510.0" />
+            <Button fx:id="addFileView" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="154.0" text="Add File" />
+         </children>
+      </HBox>
+      <SplitPane dividerPositions="0.5228658536585366" layoutY="34.0" prefHeight="594.0" prefWidth="769.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.47309833024118736" orientation="VERTICAL" prefHeight="592.0" prefWidth="397.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <VBox prefHeight="275.0" prefWidth="395.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="395.0" style="-fx-background-color: #00796B;" text="Contenido del archivo" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="fileArffContentView" editable="false" prefHeight="254.0" prefWidth="337.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="395.0">
+                           <children>
+                              <VBox prefHeight="307.0" prefWidth="395.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="397.0" style="-fx-background-color: #00796B;" text="Dataset obtenido " textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="datasetView" editable="false" prefHeight="290.0" prefWidth="395.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Accordion prefHeight="592.0" prefWidth="362.0">
+                    <panes>
+                      <TitledPane animated="false" text="Conjunto de términos">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="167.0">
+                                 <children>
+                                    <VBox prefHeight="541.0" prefWidth="362.0">
+                                       <children>
+                                          <TextArea fx:id="info" editable="false" prefHeight="553.0" prefWidth="362.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Navie Bayes">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="545.0" prefWidth="362.0">
+                                       <children>
+                                          <HBox prefHeight="37.0" prefWidth="309.0">
+                                             <children>
+                                                <Button fx:id="clasify" disable="true" mnemonicParsing="false" onAction="#classifyNavieBayes" prefHeight="37.0" prefWidth="364.0" text="Clasificar dataset" />
+                                             </children>
+                                          </HBox>
+                                          <TextArea fx:id="classifyArea" prefHeight="506.0" prefWidth="362.0" />
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    </children>
+</AnchorPane>
